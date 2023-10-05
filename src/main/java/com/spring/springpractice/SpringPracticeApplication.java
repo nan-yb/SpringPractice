@@ -1,11 +1,11 @@
-package com.spring.batch.batchpractice;
+package com.spring.springpractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BatchPracticeApplication {
+public class SpringPracticeApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BatchPracticeApplication.class, args);
+        SpringApplication.run(SpringPracticeApplication.class, args);
     }
 }
