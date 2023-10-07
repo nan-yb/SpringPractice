@@ -20,8 +20,6 @@ public class UserRepositoryCustomImpl extends QuerydslRepositorySupport implemen
 
     @Override
     public List<User> getUserList(String name) {
-        QUser user = QUser.user;
-
-        return queryFactory.selectFrom(user).fetch();
+        return queryFactory.selectFrom(QUser.user).fetch();
     }
 }
