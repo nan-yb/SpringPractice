@@ -6,6 +6,8 @@ import com.spring.springpractice.user.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 
@@ -22,4 +24,6 @@ public class UserRepositoryCustomImpl extends QuerydslRepositorySupport implemen
     public List<User> getUserList(String name) {
         return queryFactory.selectFrom(QUser.user).fetch();
     }
+
+
 }

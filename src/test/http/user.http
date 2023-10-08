@@ -1,2 +1,21 @@
+### 유저 리스트 가져오기
 GET http://localhost:8080/user/list
 Content-Type: application/json
+
+
+### 유저 정보 생성
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "email" : "test@test.com",
+  "name" : "t1"
+}
+
+### 유저 정보 삭제
+DELETE http://localhost:8080/user/delete
+Content-Type: application/json
+
+{
+  "id" : 1
+}
