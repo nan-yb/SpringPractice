@@ -1,11 +1,11 @@
 package com.spring.springpractice.user.repository;
 
-import com.spring.springpractice.user.domain.User;
+import com.spring.springpractice.user.domain.user.User;
+import com.spring.springpractice.user.repository.user.UserRepository;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.persistence.EntityManager;
@@ -26,10 +26,9 @@ class UserRepositoryCustomImplTest {
     private User user;
     @Test
     void getUserList() {
-
         List<User> userList =  userRepository.getUserList("");
-
         Assert.assertNotNull(userList);
-
     }
+
+
 }

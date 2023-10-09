@@ -1,5 +1,6 @@
-package com.spring.springpractice.user.domain;
+package com.spring.springpractice.user.domain.user;
 
+import com.spring.springpractice.user.domain.AuditingFields;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.Objects;
 @ToString
 @Table(name = "user")
 @Entity
-public class User extends AuditingFields{
+public class User extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,10 +2,10 @@ package com.spring.springpractice.user.controller;
 
 import com.spring.springpractice.conf.response.Message;
 import com.spring.springpractice.conf.response.Status;
-import com.spring.springpractice.user.domain.User;
+import com.spring.springpractice.user.domain.user.User;
 import com.spring.springpractice.user.dto.UserDto;
-import com.spring.springpractice.user.repository.UserRepository;
-import com.spring.springpractice.user.service.UserService;
+import com.spring.springpractice.user.repository.user.UserRepository;
+import com.spring.springpractice.user.service.user.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

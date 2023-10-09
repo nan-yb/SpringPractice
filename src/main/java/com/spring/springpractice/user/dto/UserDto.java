@@ -1,7 +1,8 @@
 package com.spring.springpractice.user.dto;
 
-import com.spring.springpractice.user.domain.User;
+import com.spring.springpractice.user.domain.user.User;
 
+import javax.sound.sampled.AudioFileFormat;
 import java.time.LocalDateTime;
 
 public record UserDto(
