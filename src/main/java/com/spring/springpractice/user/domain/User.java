@@ -1,6 +1,5 @@
-package com.spring.springpractice.user.domain.user;
+package com.spring.springpractice.user.domain;
 
-import com.spring.springpractice.user.domain.AuditingFields;
 import lombok.*;
 
 import javax.persistence.*;

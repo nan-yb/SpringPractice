@@ -2,7 +2,7 @@ package com.spring.springpractice.user.repository.user;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.spring.springpractice.user.domain.QUser;
-import com.spring.springpractice.user.domain.user.User;
+import com.spring.springpractice.user.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 

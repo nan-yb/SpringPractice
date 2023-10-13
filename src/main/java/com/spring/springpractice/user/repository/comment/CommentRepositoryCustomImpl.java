@@ -24,4 +24,22 @@ public class CommentRepositoryCustomImpl extends QuerydslRepositorySupport imple
 
         return queryFactory.selectFrom(qcomment).where(qcomment.boardId.eq(boardId)).fetch();
     }
+
+
+    @Override
+    public void deleteAllComment(Long boardId) {
+
+        QComment qComment = QComment.comment;
+
+        queryFactory.delete(qComment).where(qComment.boardId.eq(boardId));
+
+    }
+
+    @Override
+    public void deleteCommentByCommentId(Long commentId) {
+        QComment qComment = QComment.comment;
+
+        queryFactory.delete(qComment).where(qComment.commentId.eq(commentId));
+
+    }
 }

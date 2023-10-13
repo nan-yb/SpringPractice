@@ -1,6 +1,6 @@
 package com.spring.springpractice.user.repository.user;
 
-import com.spring.springpractice.user.domain.user.User;
+import com.spring.springpractice.user.domain.User;
 
 import java.util.List;
 

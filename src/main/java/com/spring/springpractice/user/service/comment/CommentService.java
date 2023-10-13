@@ -16,7 +16,6 @@ import java.util.List;
 @Transactional
 public class CommentService {
 
-
     private CommentRepository commentRepository;
 
     private List<Comment> getCommentService(Long boardId) {

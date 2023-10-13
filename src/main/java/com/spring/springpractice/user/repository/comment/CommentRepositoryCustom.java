@@ -9,4 +9,8 @@ import java.util.List;
 public interface CommentRepositoryCustom {
 
     List<Comment> getCommentList(Long boardId);
+
+    void deleteAllComment(Long boardId);
+
+    void deleteCommentByCommentId(Long commentId);
 }

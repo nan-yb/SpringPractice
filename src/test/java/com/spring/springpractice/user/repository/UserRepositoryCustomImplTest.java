@@ -1,6 +1,6 @@
 package com.spring.springpractice.user.repository;
 
-import com.spring.springpractice.user.domain.user.User;
+import com.spring.springpractice.user.domain.User;
 import com.spring.springpractice.user.repository.user.UserRepository;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
