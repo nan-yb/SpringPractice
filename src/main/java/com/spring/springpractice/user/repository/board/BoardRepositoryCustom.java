@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BoardRepositoryCustom {
     List<Board> getBoardList(User user);
-
+    List<Board> getDetailBoard(Long boardId);
 }

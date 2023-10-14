@@ -1,5 +1,6 @@
 package com.spring.springpractice.user.domain;
 
+import com.spring.springpractice.user.dto.CommentDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,6 +8,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -14,24 +17,21 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @ToString
-@Table(name = "board")
 @Entity
 public class Board extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="board_id" , nullable = false)
     private Long boardId;
 
-    @Column(name="usr_id" , nullable = false)
     private Long usrId;
 
-    @Column(name="board_title")
     private String boardTitle;
 
-    @Column(name="board_content")
     private String boardContent;
 
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL)
+    private List<Comment> commentList = new ArrayList<>();
 
     private Board(Long boardId , Long usrId , String boardTitle  , String boardContent,  LocalDateTime rogDate , LocalDateTime modDate){
         this.boardId = boardId;

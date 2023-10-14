@@ -9,19 +9,15 @@ import java.util.Objects;
 @Getter @Setter
 @NoArgsConstructor
 @ToString
-@Table(name = "user")
 @Entity
 public class User extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id" , nullable = false)
     private Long id;
 
-    @Column(name="email")
     private String email;
 
-    @Column(name="name")
     private String name;
 
     private User(Long id , String email , String name , LocalDateTime rogDate , LocalDateTime modDate){

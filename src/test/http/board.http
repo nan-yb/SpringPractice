@@ -6,6 +6,11 @@ Content-Type: application/json
   "id" : 1
 }
 
+### 게시글 상세 가져오기
+GET http://localhost:8080/board/detail?boardId=1
+Content-Type: application/json
+
+
 ### 게시글 생성
 POST http://localhost:8080/board/create
 Content-Type: application/json

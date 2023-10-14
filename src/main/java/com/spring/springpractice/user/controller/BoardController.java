@@ -33,6 +33,15 @@ public class BoardController {
         return new ResponseEntity<Message>(msg , null , HttpStatus.OK);
     }
 
+
+    @GetMapping("/detail")
+    public ResponseEntity<?> getDetailBoard(@RequestParam Long boardId){
+        Message msg = new Message();
+        msg.setStatus(Status.OK);
+        msg.setData(boardService.getBoardWithComment(boardId));
+        return new ResponseEntity<Message>(msg , null , HttpStatus.OK);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<?>  createBoard(@RequestBody BoardDto board){
         Message msg = new Message();

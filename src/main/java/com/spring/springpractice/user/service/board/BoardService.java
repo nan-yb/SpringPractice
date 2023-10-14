@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -32,16 +33,18 @@ public class BoardService {
         return boardRepository.getBoardList(user);
     }
 
-    public BoardDto saveBoard(BoardDto dto) {
-        return BoardDto.from(
-                boardRepository.save(Board.of(dto.usrId() , dto.boardTitle(), dto.boardContent()))
-        );
+    public BoardDto getBoardWithComment(Long boardId) {
+        return boardRepository.findById(boardId)
+                .map(BoardDto::from)
+                .orElseThrow(()-> new EntityNotFoundException("NotFound Board - articleId: " + boardId));
     }
 
-    public CommentDto saveComment(CommentDto dto) {
-        return CommentDto.from(
-                commentRepository.save(Comment.of(dto.boardId() , dto.usrId() , dto.commentContent()))
-        );
+    public void saveBoard(BoardDto dto) {
+        boardRepository.save(Board.of(dto.usrId() , dto.boardTitle(), dto.boardContent()));
+    }
+
+    public void saveComment(CommentDto dto) {
+        commentRepository.save(Comment.of(dto.boardId() , dto.usrId() , dto.commentContent()));
     }
 
     public void deleteAllComment(Long boardId) {
@@ -51,5 +54,6 @@ public class BoardService {
     public void deleteCommentByCommentId(Long commentId) {
         commentRepository.deleteCommentByCommentId(commentId);
     }
+
 
 }
