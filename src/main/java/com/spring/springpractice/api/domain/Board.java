@@ -1,15 +1,14 @@
 package com.spring.springpractice.user.domain;
 
-import com.spring.springpractice.user.dto.CommentDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
 
@@ -18,7 +17,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Board extends AuditingFields {
+public class Board  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,21 +29,17 @@ public class Board extends AuditingFields {
 
     private String boardContent;
 
-    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL)
-    private List<Comment> commentList = new ArrayList<>();
 
-    private Board(Long boardId , Long usrId , String boardTitle  , String boardContent,  LocalDateTime rogDate , LocalDateTime modDate){
+    private Board(Long boardId , Long usrId , String boardTitle  , String boardContent){
         this.boardId = boardId;
         this.usrId = usrId;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;
-        this.rogDate = rogDate;
-        this.modDate = modDate;
     }
 
-    public static Board of (Long usrId ,  String boardTitle , String boardContent ){
-        return new Board(null , usrId , boardTitle ,boardContent ,null , null);
-    }
+//    public static Board of (Long usrId ,  String boardTitle , String boardContent ){
+//        return new Board(usrId , boardTitle ,boardContent ,null , null);
+//    }
 
     @Override
     public boolean equals(Object o) {
