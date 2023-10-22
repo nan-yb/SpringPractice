@@ -1,4 +1,4 @@
-package com.spring.springpractice.user.repository;
+package com.spring.springpractice.api.repository;
 
 public interface BoardRepositoryCustom {
 }

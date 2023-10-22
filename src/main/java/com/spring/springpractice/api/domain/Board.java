@@ -1,9 +1,6 @@
-package com.spring.springpractice.user.domain;
+package com.spring.springpractice.api.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,17 +26,12 @@ public class Board  {
 
     private String boardContent;
 
-
     private Board(Long boardId , Long usrId , String boardTitle  , String boardContent){
         this.boardId = boardId;
         this.usrId = usrId;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;
     }
-
-//    public static Board of (Long usrId ,  String boardTitle , String boardContent ){
-//        return new Board(usrId , boardTitle ,boardContent ,null , null);
-//    }
 
     @Override
     public boolean equals(Object o) {
@@ -52,7 +44,5 @@ public class Board  {
     public int hashCode() {
         return Objects.hash(this.getBoardId());
     }
-
-
 
 }

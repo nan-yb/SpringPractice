@@ -1,11 +1,6 @@
-package com.spring.springpractice.user.dto;
+package com.spring.springpractice.api.dto;
 
-import com.spring.springpractice.user.domain.Board;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import com.spring.springpractice.api.domain.Board;
 
 public record BoardDto(
     Long boardId ,

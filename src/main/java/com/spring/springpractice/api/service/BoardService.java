@@ -1,6 +1,6 @@
-package com.spring.springpractice.user.service;
+package com.spring.springpractice.api.service;
 
-import com.spring.springpractice.user.repository.BoardRepository;
+import com.spring.springpractice.api.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

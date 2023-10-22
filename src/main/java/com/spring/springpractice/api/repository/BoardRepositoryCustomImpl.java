@@ -1,7 +1,7 @@
-package com.spring.springpractice.user.repository;
+package com.spring.springpractice.api.repository;
 
 
-import com.spring.springpractice.user.domain.Board;
+import com.spring.springpractice.api.domain.Board;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
 public class BoardRepositoryCustomImpl extends QuerydslRepositorySupport implements BoardRepositoryCustom {

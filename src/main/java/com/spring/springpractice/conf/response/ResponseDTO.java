@@ -3,14 +3,31 @@ package com.spring.springpractice.conf.response;
 import lombok.Data;
 
 @Data
-public class Message {
-    private Enum<Status> status;
-    private String message;
-    private Object data;
+public class ResponseDTO {
 
-    public Message() {
-        this.status = Status.BAD_REQUEST;
+    public final String status;
+    public final String message;
+    public final Object data;
+
+    public ResponseDTO(Object data){
+        this(data, "");
+    }
+
+    public ResponseDTO(Object data, String message){
+        this.status = ResponseStatus.SUCCESS.str;
+        this.message = message;
+        this.data = data;
+    }
+
+    public ResponseDTO(BizException ex){
+        this.status = ResponseStatus.FAIL.str;
+        this.message = ex.getMessage();
         this.data = null;
+    }
+
+    public ResponseDTO(Throwable ex){
+        this.status = ResponseStatus.ERROR.str;
+        this.message = ex.getMessage();
         this.data = null;
     }
 
