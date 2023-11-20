@@ -1,5 +1,6 @@
 package com.spring.springpractice.conf.response;
 
+import com.spring.springpractice.conf.exception.BizException;
 import lombok.Data;
 
 @Data

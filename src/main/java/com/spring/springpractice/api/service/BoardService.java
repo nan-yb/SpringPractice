@@ -12,13 +12,5 @@ import javax.transaction.Transactional;
 @Transactional
 @Service
 public class BoardService {
-
     private final BoardRepository boardRepository;
-
-//    private List<Board> getBoardList(User user) {
-//        return boardRepository.getBoardList(user);
-//    }
-
-
-
 }

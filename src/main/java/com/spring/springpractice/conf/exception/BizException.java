@@ -1,4 +1,4 @@
-package com.spring.springpractice.conf.response;
+package com.spring.springpractice.conf.exception;
 
 public class BizException extends RuntimeException {
 

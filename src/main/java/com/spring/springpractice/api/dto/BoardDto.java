@@ -9,7 +9,6 @@ public record BoardDto(
     String boardContent
 ) {
 
-
     public static BoardDto of (Long usrId  , String boardTitle , String boardContent){
         return new BoardDto(null , usrId ,  boardTitle , boardContent  );
     }
