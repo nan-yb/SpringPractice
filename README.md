@@ -1,16 +1,7 @@
 # SpringBatch
 
-### docker
 
-1.  mysql
-
-``` shell
-docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysql:latest
-```
-
-
-
-#  📌 프로젝트 진행 규칙 
+#  📌 프로젝트 진행 규칙
 
 ## 이슈
 
@@ -40,3 +31,21 @@ docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 my
 - Client-Controller-Service 오가는 객체의 이름은 Protocol로 한다
 - Service-Repository-DB 오가는 객체의 이름은 Entity로 한다
 - 주석은 정말 꼭 필요한 경우가 아니라면 달지 않는다
+
+
+## Kafka 
+### 🚀 미니프로젝트
+
+문서  : [kafka 미니프로젝트 README.md](src/main/java/com/spring/springpractice/kafka/kafka.md)
+
+##  JPA
+### docker
+
+1.  mysql
+
+``` shell
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysql:latest
+```
+
+
+
