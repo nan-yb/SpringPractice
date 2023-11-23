@@ -72,6 +72,8 @@ bin/kafka-topics.sh --create \
 --partitions 3 \
 --topic select-color
 ```
+싱글 카프카 브로커일 경우 replication-factor 1 로 지정해도 실습 무관함
+
 
 
 
