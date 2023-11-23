@@ -64,4 +64,16 @@
   brew install hadoop 
 ```
 
+- 토픽생성 
+```zsh
+bin/kafka-topics.sh --create \
+--bootstrap-server host:9092 \
+--replication-factor 2 \
+--partitions 3 \
+--topic select-color
+```
+
+
+
+
 참고 :  아파치 카프카 애플리케이션 프로그래밍 with 자바 
