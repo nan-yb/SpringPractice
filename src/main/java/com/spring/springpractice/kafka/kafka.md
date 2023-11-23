@@ -57,13 +57,11 @@
 - brew 설치(키바나 엘라스틱서치) 안되는 이슈 있는듯 2023/11/22일
 - docker로 대체 예정
 
-```shell
+```zsh
   brew tap elastic/tap
   brew install elastic/tap/kibana-full
   brew install elastic/tap/elasticsearch-full
-  brew install hadoop
+  brew install hadoop 
 ```
-
-
 
 참고 :  아파치 카프카 애플리케이션 프로그래밍 with 자바 

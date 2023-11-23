@@ -1,4 +1,4 @@
-package com.spring.springpractice.kafka.Consumer;
+package com.spring.springpractice.kafka.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;

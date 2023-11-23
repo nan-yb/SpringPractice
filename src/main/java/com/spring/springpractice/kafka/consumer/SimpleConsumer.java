@@ -1,17 +1,11 @@
-package com.spring.springpractice.kafka.Consumer;
+package com.spring.springpractice.kafka.consumer;
 
-import com.spring.springpractice.kafka.Producer.CustomPartitioner;
-import com.spring.springpractice.kafka.Producer.SimpleProducer;
 import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;

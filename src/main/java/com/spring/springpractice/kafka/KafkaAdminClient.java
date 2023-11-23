@@ -1,6 +1,6 @@
 package com.spring.springpractice.kafka;
 
-import com.spring.springpractice.kafka.Consumer.SimpleConsumer;
+import com.spring.springpractice.kafka.consumer.SimpleConsumer;
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.DescribeConfigsResult;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
