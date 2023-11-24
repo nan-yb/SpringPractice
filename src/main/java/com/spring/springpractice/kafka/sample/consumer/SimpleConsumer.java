@@ -1,4 +1,4 @@
-package com.spring.springpractice.kafka.consumer;
+package com.spring.springpractice.kafka.sample.consumer;
 
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;

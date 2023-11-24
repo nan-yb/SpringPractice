@@ -1,4 +1,4 @@
-package com.spring.springpractice.kafka.spring.config;
+package com.spring.springpractice.kafka.sample.config;
 
 import org.springframework.kafka.annotation.KafkaListener;
 

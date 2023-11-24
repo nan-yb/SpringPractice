@@ -1,4 +1,4 @@
-package com.spring.springpractice.kafka.streams.processor;
+package com.spring.springpractice.kafka.sample.streams.processor;
 
 
 import org.apache.kafka.streams.processor.Processor;

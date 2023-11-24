@@ -1,4 +1,4 @@
-package com.spring.springpractice.kafka.spring.config;
+package com.spring.springpractice.kafka.sample.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
