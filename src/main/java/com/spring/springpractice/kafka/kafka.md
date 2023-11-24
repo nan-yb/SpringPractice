@@ -16,7 +16,7 @@
 ---
 
 ### 아키텍처
-![아키텍처](../kafka/images/architecture.png)
+![아키텍처](sample/images/architecture.png)
 
 - 로컬 하둡 , 엘라스틱서치 , 키바나 설치
 - 토픽생성

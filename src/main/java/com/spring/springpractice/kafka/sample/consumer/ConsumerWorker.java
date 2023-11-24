@@ -17,10 +17,10 @@ public class ConsumerWorker implements  Runnable{
 
     private Properties prop;
     private String topic;
-    private String threadName;
+    private int threadName;
     private KafkaConsumer<String , String> consumer;
 
-    public ConsumerWorker(Properties prop, String topic, String threadName) {
+    public ConsumerWorker(Properties prop, String topic, int threadName) {
         this.prop = prop;
         this.topic = topic;
         this.threadName = threadName;
