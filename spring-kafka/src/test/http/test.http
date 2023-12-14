@@ -1,0 +1,48 @@
+### 게시글 리스트 가져오기
+GET http://localhost:8080/board/list
+Content-Type: application/json
+
+{
+  "id" : 1
+}
+
+### 게시글 상세 가져오기
+GET http://localhost:8080/board/detail?boardId=1
+Content-Type: application/json
+
+
+### 게시글 생성
+POST http://localhost:8080/board/create
+Content-Type: application/json
+
+{
+  "usrId" : "1",
+  "boardTitle" : "t2",
+  "boardContent" : "t2"
+}
+
+### 댓글 생성
+POST http://localhost:8080/board/comment/create
+Content-Type: application/json
+
+{
+  "boardId" : "1",
+  "usrId" : "1",
+  "commentContent" : "댓글삭제제제제제제제"
+}
+
+
+### 게시글 댓글 전체 삭제
+DELETE http://localhost:8080/board/comment/deleteAll
+Content-Type: application/json
+
+{
+  "boardId" : "1"
+}
+### 댓글 삭제
+DELETE http://localhost:8080/board/comment/delete
+Content-Type: application/json
+
+{
+  "commentId" : "1"
+}

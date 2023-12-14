@@ -1,0 +1,12 @@
+
+
+POST localhost:8080/v1/item/add
+Content-Type: application/json
+
+{
+  "id": "1234",
+  "name": "test",
+  "description": "ddescription",
+  "count" : 100
+}
+
