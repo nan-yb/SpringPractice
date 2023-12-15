@@ -8,7 +8,7 @@
 
 ## User Microservice - Login
 
-<img src="/img/13.png" width="500px;">
+<img src="/spring-msa/img/13.png" width="500px;">
 
 ### Spring Security
 
