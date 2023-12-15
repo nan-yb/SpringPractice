@@ -79,7 +79,7 @@ $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --to
     - Stream 또는 Batch 형태로 데이터 전송 가능
     - 커스텀 Connector 를 통한 다양한 Plugin 제공 (file, S3, Hive, Mysql, etc.. )
 
-<img src="/img/16.png" width="500px;">
+<img src="/spring-msa/img/16.png" width="500px;">
 
 ```
 **Kafka Connect 설치**
