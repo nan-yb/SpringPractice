@@ -8,6 +8,6 @@
 
 ### Spring Cloud Netfilx Eureka
 
-<img src="/img/2.png" width="500px;">
+<img src="/spring-msa/img/2.png" width="500px;">
 
 LB 에서 Serivce Discovery 를 거쳐서 각 서버에게 전달
