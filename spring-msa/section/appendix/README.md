@@ -33,7 +33,7 @@ Microservice
 - 데이터의 일관성과 트랜잭션 처리 가능
 - 데이터 저장소의 개체를 직접 업데이트 하지 않기 때문에, 동시성에 대한 충돌 문제 해결
 
-  <img src="/img/26.png" width="500px;">
+  <img src="/spring-msa/img/26.png" width="500px;">
 
 - 도메인 주도 설계 (Domain-Driven Design)
     - Aggregate
@@ -50,12 +50,12 @@ Microservice
     - 상태를 변경하는 Command
     - 조회를 담당하는 Query
 
-  <img src="/img/27.png" width="500px;">
+  <img src="/spring-msa/img/27.png" width="500px;">
 
 
 ### E-commerce application 적용
 
-<img src="/img/28.png" width="500px;">
+<img src="/spring-msa/img/28.png" width="500px;">
 
 ## Saga Pattern
 
@@ -67,11 +67,11 @@ Microservice
 - 데이터의 원자성을 보장하지는 않지만, 일관성을 보장
 - 마이크로 서비스에서 트랜잭션을 유지하기 위해 적합한 패턴
 
-<img src="/img/29.png" width="500px;">
+<img src="/spring-msa/img/29.png" width="500px;">
 
 ### Choreography - based saga
 
-<img src="/img/30.png" width="500px;">
+<img src="/spring-msa/img/30.png" width="500px;">
 
 1) 주문 서비스에서 주문 요청(post) 을 수신하고 panding 상태의 주문 생성
 2) 주문 생성 이벤트 전달
@@ -81,7 +81,7 @@ Microservice
 
 ### Orchestration-based saga
 
-<img src="/img/31.png" width="500px;">
+<img src="/spring-msa/img/31.png" width="500px;">
 
 1) 주문 서비스 주문 요청(POST) 을 수신하고 Create Order saga orchestrator 생성
 2) Order saga orchestrator 가 pending 상태의 주문 생성
