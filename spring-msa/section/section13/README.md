@@ -16,8 +16,8 @@ Microservice 통신시 오류 발생시 준비해놓은 response 를 응답주�
 - 장애가 발생하는 서비스에  반복적인 호출이 되지 못하도록 차단
 - 특정 서비스가 정상적으로 동작하지 않을 경우 다른 기능으로 대체 수행 → 장애 회피
 
-<img src="/img/18.png" width="500px;"></br>
-<img src="/img/19.png" width="500px;">
+<img src="/spring-msa/img/18.png" width="500px;"></br>
+<img src="/spring-msa/img/19.png" width="500px;">
 
 Closed 와 Open 두가지 상태가 있다.</br>
 Closed 는 MS 를 정상적으로 사용가능한 경우이고, Open 은 그 반대이다.
@@ -26,7 +26,7 @@ Closed 는 MS 를 정상적으로 사용가능한 경우이고, Open 은 그 반
 
 Spring Cloud Netflix Hystrix 는 Spring 에서 더이상 지원을 하지 않으므로 이를 대체하기 위한 프로젝트이다.
 
-<img src="/img/20.png" width="500px;">
+<img src="/spring-msa/img/20.png" width="500px;">
 
 - resilience4j - circuitbreaker: Circuit breaking
 - resilience4j - ratelimiter : Rate limiting
@@ -49,7 +49,7 @@ Spring Cloud Netflix Hystrix 는 Spring 에서 더이상 지원을 하지 않으
     - 트리 구조로 이뤄진 Span 셋
     - 하나의 요청에 대한 같은 Trace ID 발급
 
-<img src="/img/21.png" width="500px;">
+<img src="/spring-msa/img/21.png" width="500px;">
 
 ### Spring Cloud Sleuth
 
@@ -62,4 +62,4 @@ Spring Cloud Netflix Hystrix 는 Spring 에서 더이상 지원을 하지 않으
     - message channels
     - feign client
 
-<img src="/img/22.png" width="500px;">
+<img src="/spring-msa/img/22.png" width="500px;">
