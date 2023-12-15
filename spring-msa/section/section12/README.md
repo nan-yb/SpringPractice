@@ -7,4 +7,4 @@
 - Orders Service 에서 Kafka Topic 으로 메시지 전송 → Producer
 - Catalogs Service 에서 Kafka Topic 에 전송된 메시지 취득 → Consumer
 
-<img src="/img/17.png" width="500px;">
+<img src="/spring-msa/img/17.png" width="500px;">
