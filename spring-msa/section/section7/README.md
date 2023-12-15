@@ -19,9 +19,9 @@
 - 각 서비스를 다시 빌드하지 않고 바로 적용 가능
 - 애플리케이션 배포 파이프라인을 통해 DEV-UAT-PROD 환경에 맞는 구성 정보 사용
 
-<img src="/img/14.png" width="500px;">
+<img src="/spring-msa/img/14.png" width="500px;">
 
-<img src="/img/15.png" width="500px;"></br>
+<img src="/spring-msa/img/15.png" width="500px;"></br>
 (각 환경에 맞게 설정 정보 전달)
 
 ## Local Git Repository
