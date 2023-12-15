@@ -8,8 +8,8 @@
 
 ### Catalogs Microservice 기능 구현
 
-<img src="/img/11.png" width="500px;">
+<img src="/spring-msa/img/11.png" width="500px;">
 
 ### Orders Microservice 기능 구현
 
-<img src="/img/12.png" width="500px;">
+<img src="/spring-msa/img/12.png" width="500px;">
