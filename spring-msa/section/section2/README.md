@@ -25,7 +25,7 @@
 
 ### Netfilx Zuul : Gateway 역할
 
-<img src="/img/3.png" width="500px;">
+<img src="/spring-msa/img/3.png" width="500px;">
 
 **구성**</br>
 - First Service
@@ -101,4 +101,4 @@ spring:
 
 ## Spring Cloud Gateway - Eureka 연동
 
-<img src="/img/4.png" width="500px;">
+<img src="/spring-msa/img/4.png" width="500px;">
