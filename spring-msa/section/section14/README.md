@@ -12,7 +12,7 @@
 
 - 마이크로서비스에서 생성되는 Hystrix 클라이언트 스트림 메시지를 터빈 서버(Turbine server)로 수집
 
-<img src="/img/23.png" width="500px;">
+<img src="/spring-msa/img/23.png" width="500px;">
 
 ## Hystrix Dashboard
 
@@ -20,7 +20,7 @@ Hystirx 클라이언트에서 생성하는 스트림을 시각화
 
 - Web dashboard
 
-<img src="/img/24.png" width="500px;">
+<img src="/spring-msa/img/24.png" width="500px;">
 
 ## Micrometer , Timer
 
@@ -52,7 +52,7 @@ Hystirx 클라이언트에서 생성하는 스트림을 시각화
 - 데이터 시각화, 모니터링 및 분석을 위한 오픈소스 애플리케이션
 - 시계열 데이터를 시각화하기 위한 대시보드 제공
 
-<img src="/img/25.png" width="500px;">
+<img src="/spring-msa/img/25.png" width="500px;">
 
 ### **Prometheus 다운로드**
 
