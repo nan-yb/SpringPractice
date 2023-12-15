@@ -9,9 +9,9 @@
 
 ## User Microservice 개요
 
-<img src="/img/9.png" width="500px;">
+<img src="/spring-msa/img/9.png" width="500px;">
 
-<img src="/img/10.png" width="500px;">
+<img src="/spring-msa/img/10.png" width="500px;">
 
 ### Spring Security
 
