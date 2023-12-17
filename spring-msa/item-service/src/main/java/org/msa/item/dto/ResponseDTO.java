@@ -1,4 +1,4 @@
-package com.example.item.dto;
+package org.msa.item.dto;
 
 import lombok.Builder;
 import lombok.Getter;

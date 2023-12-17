@@ -1,0 +1,28 @@
+
+
+POST localhost:8001/v1/item/add
+Content-Type: application/json
+
+{
+  "id": "",
+  "name": "",
+  "description": "ddescription",
+  "count" : 100
+}
+
+###
+POST localhost:8001/v1/item/add/C
+Content-Type: application/json
+
+{
+"id": "12223",
+"name": "12223",
+"description": "ddescription",
+"count" : 100
+}
+
+
+
+
+
+

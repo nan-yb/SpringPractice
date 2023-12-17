@@ -1,0 +1,7 @@
+POST localhost:8080/encrypt
+Content-Type: application/json
+
+  1234
+
+### refresh
+POST localhost:8001/actuator/refresh
