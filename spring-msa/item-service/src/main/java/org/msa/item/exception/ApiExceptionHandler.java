@@ -13,36 +13,36 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> Exception(HttpServletRequest request, Exception e) throws Exception {
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<?> Exception(HttpServletRequest request, Exception e) throws Exception {
         ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
         responseBuilder.code("500").message(e.getMessage());
         return ResponseEntity.ok(responseBuilder.build());
-    }
+	}
+	
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException ex) throws JSONException{
+		BindingResult bindingResult = ex.getBindingResult();
+		StringBuilder builder = new StringBuilder();
+		for (FieldError fieldError : bindingResult.getFieldErrors()) {
+			builder.append("[");
+			builder.append(fieldError.getField());
+			builder.append("](은)는 ");
+			builder.append(fieldError.getDefaultMessage());
+			builder.append(" 입력된 값: [");
+			builder.append(fieldError.getRejectedValue());
+			builder.append("]");
+		}
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException ex) throws JSONException{
-        BindingResult bindingResult = ex.getBindingResult();
-        StringBuilder builder = new StringBuilder();
-        for (FieldError fieldError : bindingResult.getFieldErrors()) {
-            builder.append("[");
-            builder.append(fieldError.getField());
-            builder.append("](은)는 ");
-            builder.append(fieldError.getDefaultMessage());
-            builder.append(" 입력된 값: [");
-            builder.append(fieldError.getRejectedValue());
-            builder.append("]");
-        }
-
-        ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
-        responseBuilder.code("500").message(builder.toString());
-        return ResponseEntity.ok(responseBuilder.build());
-    }
-
-    @ExceptionHandler(ApiException.class)
-    public ResponseEntity<?> ApiException(HttpServletRequest request, ApiException e) throws Exception {
-        ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
+		ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
+		responseBuilder.code("500").message(builder.toString());
+		return ResponseEntity.ok(responseBuilder.build());
+	}
+	
+	@ExceptionHandler(ApiException.class)
+	public ResponseEntity<?> ApiException(HttpServletRequest request, ApiException e) throws Exception {
+		ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
         responseBuilder.code("501").message(e.getMessage());
         return ResponseEntity.ok(responseBuilder.build());
-    }
+	}
 }
