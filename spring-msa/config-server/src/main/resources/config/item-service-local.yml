@@ -8,20 +8,9 @@ logging:
     org.msa.item: debug
 
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: 'jdbc:mysql://localhost:3306/msa?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul'
-    username: root
-    password: 1234
-
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    hibernate:
-      ddl-auto: create
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+  config:
+    import:
+      - classpath:/config/datasource-local.yml
         
 springdoc:
   default-consumes-media-type: application/json

@@ -1,5 +1,6 @@
 package org.msa.item.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.msa.item.dto.ItemDTO;
 import org.msa.item.dto.ResponseDTO;
 import org.msa.item.service.ItemService;
@@ -37,9 +38,9 @@ public class ItemController {
             @ApiResponse(responseCode = "501", description = "API EXCEPTION")
     })
 	@RequestMapping(value="/add/{itemType}", method=RequestMethod.POST)
-	public ResponseEntity<ResponseDTO> add(@Valid @RequestBody ItemDTO itemDTO, @ItemTypeValid @PathVariable String itemType) throws Exception{
+	public ResponseEntity<ResponseDTO> add(HttpServletRequest request ,  @Valid @RequestBody ItemDTO itemDTO, @ItemTypeValid @PathVariable String itemType) throws Exception{
 		ResponseDTO.ResponseDTOBuilder responseBuilder = ResponseDTO.builder();
-		
+		String accountId = request.getHeader("accountId").toString().replace("[" ,"").replace("]","");
 		/*
 		log.debug("path.variable itemType = {}", itemType);
 		boolean hasItemType = false;
@@ -48,25 +49,26 @@ public class ItemController {
 			hasItemType = i.hasItemCd(itemType);
 			if(hasItemType) break;
 		}
-		
+
 		if(!hasItemType) {
 			responseBuilder.code("500").message("invalid itemType .[" + itemType + "]");
 			return ResponseEntity.ok(responseBuilder.build());
 		}else {
 			itemDTO.setItemType(itemType);
 		}
-		
-		
+
+
 		try {
 			Integer.parseInt("test");
 		}catch(Exception e) {
 			throw new ApiException("test에러");
 		}
 		*/
-		
+
 		itemDTO.setItemType(itemType);
-		
-		itemService.insertItem(itemDTO);
+
+
+		itemService.insertItem(itemDTO , accountId);
 		log.debug("request add item id = {}", itemDTO.getId());
 		
 		responseBuilder.code("200").message("success");
