@@ -11,7 +11,8 @@ spring:
   config:
     import:
       - classpath:/config/datasource-local.yml
-      - classpath:/config/activemq-local.yml
+      - classpath:/config/kafka-local.yml
+#      - classpath:/config/activemq-local.yml
 
 springdoc:
   default-consumes-media-type: application/json

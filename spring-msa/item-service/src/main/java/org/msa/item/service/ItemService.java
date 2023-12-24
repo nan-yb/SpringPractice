@@ -13,8 +13,10 @@ import org.msa.item.domain.Item;
 import org.msa.item.dto.ItemDTO;
 import org.msa.item.feign.HistoryFeignClient;
 import org.msa.item.repository.ItemRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.JmsException;
 import org.springframework.jms.core.JmsTemplate;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -27,9 +29,13 @@ public class ItemService {
 	private final ItemRepository itemRepository;
 	private final HistoryFeignClient historyFeignClient;
 	private final RestTemplate restTemplate;
-	private final JmsTemplate jmsTemplate;
-	private final Queue activeMq;
+//	private final JmsTemplate jmsTemplate;
+//	private final Queue activeMq;
+	private final KafkaTemplate<String , String> kafkaTemplate;
 	ObjectMapper objectMapper = new ObjectMapper();
+
+	@Value(value="${topic.name}")
+	private String topicName;
 	
 	public void insertItem(ItemDTO itemDTO , String accountId) {
 		SimpleDateFormat form = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -57,11 +63,20 @@ public class ItemService {
 //		restTemplate 이용
 //		log.info("resttemplate result = {}" , restTemplate.postForObject("http://HISTORY_SERVICE/v1/history/save" , historyMap , String.class));
 
+//		apacheMQ
+//		try{
+//			jmsTemplate.convertAndSend(activeMq , objectMapper.writeValueAsString(itemDTO));
+//		}catch (JmsException | JsonProcessingException e){
+//			e.printStackTrace();
+//		}
+
+//		KAFKA
 		try{
-			jmsTemplate.convertAndSend(activeMq , objectMapper.writeValueAsString(itemDTO));
+			this.kafkaTemplate.send(topicName , objectMapper.writeValueAsString(itemDTO));
 		}catch (JmsException | JsonProcessingException e){
 			e.printStackTrace();
 		}
+
 
 	}
 }
