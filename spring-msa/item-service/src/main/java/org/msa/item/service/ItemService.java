@@ -5,11 +5,16 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.jms.Queue;
 import lombok.extern.slf4j.Slf4j;
 import org.msa.item.domain.Item;
 import org.msa.item.dto.ItemDTO;
 import org.msa.item.feign.HistoryFeignClient;
 import org.msa.item.repository.ItemRepository;
+import org.springframework.jms.JmsException;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -22,6 +27,9 @@ public class ItemService {
 	private final ItemRepository itemRepository;
 	private final HistoryFeignClient historyFeignClient;
 	private final RestTemplate restTemplate;
+	private final JmsTemplate jmsTemplate;
+	private final Queue activeMq;
+	ObjectMapper objectMapper = new ObjectMapper();
 	
 	public void insertItem(ItemDTO itemDTO , String accountId) {
 		SimpleDateFormat form = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -47,7 +55,13 @@ public class ItemService {
 //		log.info("feign result = {}" , historyFeignClient.saveHistory(historyMap));
 
 //		restTemplate 이용
-		log.info("resttemplate result = {}" , restTemplate.postForObject("http://HISTORY_SERVICE/v1/history/save" , historyMap , String.class));
-	}
+//		log.info("resttemplate result = {}" , restTemplate.postForObject("http://HISTORY_SERVICE/v1/history/save" , historyMap , String.class));
 
+		try{
+			jmsTemplate.convertAndSend(activeMq , objectMapper.writeValueAsString(itemDTO));
+		}catch (JmsException | JsonProcessingException e){
+			e.printStackTrace();
+		}
+
+	}
 }

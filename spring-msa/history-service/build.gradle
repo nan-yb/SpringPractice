@@ -36,7 +36,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.json:json:20230227'
+
+
+    implementation group: 'io.micrometer', name: 'micrometer-tracing-bridge-brave', version: '1.1.1'
+    implementation group: 'io.zipkin.reporter2', name: 'zipkin-reporter-brave', version: '2.16.3'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: '3.1.0'
+    implementation group: 'org.apache.activemq', name: 'activemq-broker', version: '5.18.1'
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
